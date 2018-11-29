@@ -20,6 +20,8 @@ const Zion = new UserModel({
     password:"blueprincess",
     ideas:[radioShow,prettyGirlsLLC]
 })
+
+
 UserModel.remove({})
   .then(() => Zion.save())
   .then(() => console.log('Successful Save'))

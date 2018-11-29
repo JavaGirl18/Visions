@@ -2,6 +2,8 @@ require("dotenv").config();
 var express = require('express');
 var path = require('path');
 var logger = require('morgan');
+const router = express.Router()
+var usersRouter = require('./routes/users');
 
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
@@ -32,6 +34,5 @@ app.use(express.static(__dirname + '/client/build/'));
 
 // app.use('/', indexRouter);
 app.use('/api/users', usersRouter);
-
 
 module.exports = app;
