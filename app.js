@@ -4,7 +4,7 @@ var path = require('path');
 var logger = require('morgan');
 const router = express.Router()
 var usersRouter = require('./routes/users');
-
+var ideasRouter = require('./routes/ideas')
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI); //mongodb://localhost/idea-board
@@ -18,7 +18,7 @@ connection.on('error', (err) => {
   console.log('Mongoose default connection error: ' + err);
 });
 
-var usersRouter = require('./routes/users');
+
 
 var app = express();
 
@@ -34,5 +34,6 @@ app.use(express.static(__dirname + '/client/build/'));
 
 // app.use('/', indexRouter);
 app.use('/api/users', usersRouter);
+app.use('/api/users/:userId/ideas', ideasRouter)
 
 module.exports = app;

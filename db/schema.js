@@ -10,6 +10,7 @@ const IdeaSchema = new Schema({
         type: String,
         default: "New Description"
     },
+    image: String,
     created: {
         type: Date,
         default: Date.now
@@ -21,6 +22,7 @@ const UserSchema = new Schema({
         required: true,
         unique: true
     },
+    mainImage: String,
     password:{ 
         type:String,
         required: true,

@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
 //show route
 router.get('/:id', (req, res) => {
   
-  UsersModel.findById(req.params.id)
+  UserModel.findById(req.params.id)
   .then((users)=>{
    res.send(users)
  }) 
@@ -20,7 +20,7 @@ router.get('/:id', (req, res) => {
 
   //create route
   router.post('/', (req,res)=>{
-    const newUser = new UsersModel(req.body)
+    const newUser = new UserModel(req.body)
     newUser.save().then((users)=>{
         res.send(users)
     })
@@ -30,7 +30,7 @@ router.get('/:id', (req, res) => {
 router.put('/:id', async (req,res)=>{
   const userId = req.params.id
   const updatedUser = req.body
-  const savedUser = await UsersModel.findByIdAndUpdate(userId, updatedUser)
+  const savedUser = await UserModel.findByIdAndUpdate(userId, updatedUser)
   res.send(savedUser)
 
 })
@@ -40,7 +40,7 @@ router.delete('/:id', (req,res)=>{
   const userId = req.params.id
   console.log(userId)
   // res.send('a string or whatever')
-   UsersModel.findByIdAndRemove(userId).then(()=>{
+   UserModel.findByIdAndRemove(userId).then(()=>{
       res.send({msg: 'user deleted'})
    })
  .catch((err)=>{
