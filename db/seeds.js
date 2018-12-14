@@ -9,7 +9,7 @@ const {UserModel, IdeaModel} = require('./schema')
 
 const radioShow = new IdeaModel({
     title: "Kid Talk",
-    description:"Radio showfocusedon topics that are kid friendly"
+    description:"Radio show focused on topics that are kid friendly"
 })
 const prettyGirlsLLC = new IdeaModel({
     title: "Pretty Bowtique",
