@@ -24,6 +24,7 @@
     "nodemon": "^1.18.4",
     "npm": "^6.4.1",
     "react": "^16.5.2",
+    "react-google-login": "^4.0.0",
     "router-express": "^1.5.2"
   }
 }
