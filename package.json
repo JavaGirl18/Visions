@@ -17,6 +17,7 @@
     "cors": "^2.8.4",
     "debug": "~2.6.9",
     "dotenv": "^6.1.0",
+    "event-stream": "^3.3.4",
     "express": "~4.16.0",
     "heroku": "^7.18.3",
     "mongoose": "^5.3.5",
